@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warung Es Teh - Pemesanan</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="foto.jpg" class="center" height="300" width="300" alt="Warung Es Teh Logo">
+    <h1>Warung Es Teh</h1>
+    <h2>Halaman Pemesanan</h2>
+    <form id="orderForm" method="POST" action="process_order.php">
+        <label for="name">Nama:</label>
+        <input type="text" id="name" name="name" required><br>
+        <label for="phone">Nomor HP:</label>
+        <input type="text" id="phone" name="phone" required><br>
+        <label for="postal_code">Kode Pos:</label>
+        <input type="text" id="postal_code" name="postal_code" required><br>
+        <label for="quantity">Jumlah Pesanan:</label>
+        <input type="number" id="quantity" name="quantity" required><br>
+        <label for="menu">Menu Minuman:</label>
+        <select id="menu" name="menu" required>
+            <option value="es_tea_sweet">Es Teh Manis - Rp3000</option>
+            <option value="es_tea_plain">Es Teh Tawar - Rp2000</option>
+            <option value="es_lemon_tea">Es Lemon Tea - Rp5000</option>
+            <option value="es_tea_jumbo">Es Teh Jumbo - Rp4000</option>
+        </select><br>
+        <button type="button" onclick="calculateTotal(event)">Hitung</button>
+        <button type="submit" id="orderButton">Pesan</button>
+    </form>
+    <p id="totalDisplay"></p>
+    <p id="confirmation"></p>
+
+    <script src="script.js"></script>
+
+    <h1>Warung Es Teh</h1>
+    <a href="order_list.php">Lihat Daftar Pesanan</a>
+    <!-- Form pemesanan ada di sini -->
+</body>
+
+</html>
